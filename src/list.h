@@ -10,14 +10,17 @@ struct list {
   void *item;
 };
 
+extern list list_nil;
+#define LIST_NIL (&list_nil)
+
 typedef void (*list_proc)(void **ip, void *data);
 typedef int (*list_pred)(void *item, void *data);
 
-extern list *list_new(void *item);
 extern void list_free(list *l);
 extern list *list_items(void *item, ...);
 extern list *list_copy(list *l);
 extern size_t list_length(list *l);
+extern int list_nil_p(list *l);
 extern list *list_push(list *l, void *item);
 extern list *list_pop(list *l, void **ip);
 extern list *list_append(list *l, list *other);

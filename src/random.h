@@ -5,6 +5,6 @@
 
 #include "typedef.h"
 
-extern void random_bytes(u8 *, size_t);
+extern void random_bytes(byte *buf, size_t buflen);
 
 #endif
